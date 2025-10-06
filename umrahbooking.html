@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Umrah Booking</title>
+<script data-cfasync="false" data-noptimize="1" data-wpfc-render="false">
+  (function () {
+      var script = document.createElement("script");
+      script.async = 1;
+      script.src = 'https://tpembars.com/MzkxNTEz.js?t=391513';
+      document.head.appendChild(script);
+  })();
+</script>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+<meta content="Travel deals with Amima Travels." name="description"/><link href="https://www.amimatravels.com/umrahbooking.html" rel="canonical"/><link href="/favicon.ico" rel="icon" type="image/x-icon"/><meta content="Amima Travels - Umrahbooking" property="og:title"/><meta content="Book your next trip with Amima Travels." property="og:description"/><meta content="https://www.amimatravels.com/images/hero.jpg" property="og:image"/>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GZBMCH41V3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GZBMCH41V3');
+</script>
+
+</head>
+<body>
+<header>
+<h1>Umrah Booking</h1>
+<p>Plan your spiritual journey with ease</p>
+</header>
+<div class="container">
+<section>
+<h2>Book Your Umrah Package</h2>
+<form action="/submit-booking" method="post">
+<div class="form-group">
+<label for="name">Full Name:</label>
+<input id="name" name="name" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="email">Email Address:</label>
+<input id="email" name="email" required="" type="email"/>
+</div>
+<div class="form-group">
+<label for="phone">Phone Number:</label>
+<input id="phone" name="phone" required="" type="tel"/>
+</div>
+<div class="form-group">
+<label for="package">Select Package:</label>
+<select id="package" name="package" required="">
+<option value="basic">Basic Package</option>
+<option value="standard">Standard Package</option>
+<option value="luxury">Luxury Package</option>
+</select>
+</div>
+<div class="form-group">
+<label for="dates">Preferred Dates:</label>
+<input id="dates" name="dates" required="" type="date"/>
+</div>
+<button type="submit">Book Now</button>
+</form>
+</section>
+<section>
+<h2>About Us</h2>
+<p>We offer a range of Umrah packages to cater to your needs. Our goal is to provide a seamless experience for your spiritual journey.</p>
+</section>
+</div>
+<footer>
+<p>© 2024 Umrah Booking. All rights reserved.</p>
+</footer>
+
+<!-- Currency Conversion Script with Dropdown -->
+<script>
+async function getCurrencyRate(base, target) {
+    try {
+        let res = await fetch(`https://api.exchangerate.host/latest?base=${base}`);
+        let data = await res.json();
+        return data.rates[target];
+    } catch (e) {
+        console.error("Currency API error", e);
+        return null;
+    }
+}
+
+async function convertPrices(targetCurrency) {
+    let priceElements = document.querySelectorAll("[data-price]");
+    for (let el of priceElements) {
+        let baseValue = parseFloat(el.getAttribute("data-price"));
+        let rate = await getCurrencyRate("USD", targetCurrency);
+        if (rate) {
+            el.innerText = (baseValue * rate).toFixed(2) + " " + targetCurrency;
+        }
+    }
+}
+
+function detectCurrency() {
+    let userLang = navigator.language || navigator.userLanguage;
+    if (userLang.includes("en-IN")) return "INR";
+    if (userLang.includes("ar-SA")) return "SAR";
+    return "USD";
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    let userCurrency = detectCurrency();
+    document.getElementById("currencySelect").value = userCurrency;
+    convertPrices(userCurrency);
+
+    document.getElementById("currencySelect").addEventListener("change", function() {
+        convertPrices(this.value);
+    });
+});
+</script>
+
+<!-- Dropdown UI -->
+<div style="position:fixed;top:10px;right:10px;z-index:999;background:#fff;padding:5px;border-radius:5px;box-shadow:0 0 5px #ccc;">
+    <label for="currencySelect">Currency: </label>
+    <select id="currencySelect">
+        <option value="USD">USD</option>
+        <option value="INR">INR</option>
+        <option value="SAR">SAR</option>
+        <option value="EUR">EUR</option>
+    </select>
+</div>
+
+
+    <!-- Currency switcher (auto-added) -->
+    <div id="amima_currency_switcher" style="position:fixed;right:12px;top:12px;z-index:9999;font-family:Arial,sans-serif;">
+      <select id="amima_currency_select" aria-label="Currency switcher">
+        <option value="USD" selected>USD</option>
+        <option value="INR">INR</option>
+        <option value="AED">AED</option>
+        <option value="SAR">SAR</option>
+      </select>
+    </div>
+    <script>
+    // Simple currency switcher:
+    // - Looks for elements with class "price" or data-price attribute and converts numeric value.
+    // - By default assumes amounts are in USD. Replace conversion rates as needed.
+    (function(){ 
+      const rates = { "USD":1, "INR":83.0, "AED":3.67, "SAR":3.75 }; // placeholders
+      function parseAmount(text){
+        // find first number-like token
+        const m = text.replace(/[,\s]+/g,'').match(/-?\d+(?:\.\d+)?/);
+        return m ? parseFloat(m[0]) : null;
+      }
+      function formatAmount(v, cur){
+        try { return new Intl.NumberFormat('en-US',{style:'currency',currency:cur}).format(v); } catch(e) { return v.toFixed(2) + ' ' + cur; }
+      }
+      function convertTo(target){
+        const tRate = rates[target] || 1;
+        document.querySelectorAll('.price, [data-price]').forEach(function(el){
+          let base = null;
+          if (el.dataset && el.dataset.price){
+            base = parseFloat(el.dataset.price);
+          } else {
+            base = parseAmount(el.innerText) || 0;
+          }
+          const converted = base * tRate;
+          el.innerText = formatAmount(converted, target);
+        });
+      }
+      document.getElementById('amima_currency_select').addEventListener('change', function(e){
+        convertTo(e.target.value);
+      });
+    })();
+    </script>
+
+<!-- amima_currency_auto -->
+<script>
+(function(){
+  const rates = { "USD":1, "INR":83.0, "AED":3.67, "SAR":3.75 }; // placeholder rates - update as needed
+  const localeToCurrency = {
+    "US":"USD","IN":"INR","AE":"AED","SA":"SAR","GB":"GBP","BD":"BDT","PK":"PKR","IN":"INR"
+  };
+  function detectCurrency(){
+    try{
+      const lang = navigator.language || (navigator.languages && navigator.languages[0]) || 'en-US';
+      const parts = lang.split('-');
+      const region = (parts.length>1 ? parts[1] : parts[0]).toUpperCase();
+      if(localeToCurrency[region]) return localeToCurrency[region];
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+      if(tz.indexOf('Kolkata')!==-1) return 'INR';
+      if(tz.indexOf('Dubai')!==-1 || tz.indexOf('Abu Dhabi')!==-1) return 'AED';
+      if(tz.indexOf('Riyadh')!==-1) return 'SAR';
+      return 'USD';
+    } catch(e){
+      return 'USD';
+    }
+  }
+  function parseAmount(text){
+    const m = text.replace(/[,\s]+/g,'').match(/-?\d+(?:\.\d+)?/);
+    return m ? parseFloat(m[0]) : null;
+  }
+  function formatAmount(v, cur){
+    try{ return new Intl.NumberFormat(undefined,{style:'currency',currency:cur}).format(v); } catch(e) { return v.toFixed(2) + ' ' + cur; }
+  }
+  function convertTo(target){
+    const tRate = rates[target] || 1;
+    document.querySelectorAll('.price, [data-price]').forEach(function(el){
+      var base = null;
+      if (el.dataset && el.dataset.price){
+        base = parseFloat(el.dataset.price);
+      } else {
+        base = parseAmount(el.innerText) || 0;
+      }
+      var converted = base * tRate;
+      el.innerText = formatAmount(converted, target);
+    });
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    const cur = detectCurrency();
+    convertTo(cur);
+  });
+})();
+</script>
+</body>
+</html>

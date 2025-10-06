@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+<title>Travel Explorer</title>
+<script data-cfasync="false" data-noptimize="1" data-wpfc-render="false">
+  (function () {
+      var script = document.createElement("script");
+      script.async = 1;
+      script.src = 'https://tpembars.com/MzkxNTEz.js?t=391513';
+      document.head.appendChild(script);
+  })();
+</script>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .hero {
+            background-image: url('kaaba-5488001_1280.png');
+            background-size: cover;
+            background-position: center;
+            height: 1200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 3em;
+        }
+
+        .section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .destination-grid {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .destination-grid img {
+            width: 30%;
+            height: auto;
+        }
+
+        .contact-form {
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+<meta content="Travel deals with Amima Travels." name="description"/><link href="https://www.amimatravels.com/travel.html" rel="canonical"/><link href="/favicon.ico" rel="icon" type="image/x-icon"/><meta content="Amima Travels - Travel" property="og:title"/><meta content="Book your next trip with Amima Travels." property="og:description"/><meta content="https://www.amimatravels.com/images/hero.jpg" property="og:image"/>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GZBMCH41V3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GZBMCH41V3');
+</script>
+
+</head>
+<body>
+<!-- Header -->
+<header>
+<h1>Travel Explorer</h1>
+<p>Explore the world with us!</p>
+</header>
+<!-- Navigation -->
+<nav>
+<a href="#destinations">Destinations</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact Us</a>
+</nav>
+<!-- Hero Section -->
+<div class="hero">
+<h1>Your Next Adventure Awaits!</h1>
+</div>
+<!-- Destinations Section -->
+<div class="section" id="destinations">
+<h2>Popular Destinations</h2>
+<div class="destination-grid">
+<img alt="Paris" src="paris.jpg"/>
+<img alt="New York" src="newyork.jpg"/>
+<img alt="Tokyo" src="tokyo.jpg"/>
+</div>
+</div>
+<!-- Services Section -->
+<div class="section" id="services">
+<h2>Our Services</h2>
+<p>We offer custom travel packages, guided tours, and 24/7 support to make your journey unforgettable.</p>
+</div>
+<!-- Contact Section -->
+<div class="section" id="contact">
+<h2>Contact Us</h2>
+<form class="contact-form">
+<input placeholder="Your Name" required="" type="text"/>
+<input placeholder="Your Email" required="" type="email"/>
+<textarea placeholder="Your Message" required="" rows="5"></textarea>
+<button type="submit">Send Message</button>
+</form>
+</div>
+<!-- Footer -->
+<div class="footer">
+<p>© 2024 Travel Explorer | All rights reserved.</p>
+</div>
+
+<!-- Currency Conversion Script with Dropdown -->
+<script>
+async function getCurrencyRate(base, target) {
+    try {
+        let res = await fetch(`https://api.exchangerate.host/latest?base=${base}`);
+        let data = await res.json();
+        return data.rates[target];
+    } catch (e) {
+        console.error("Currency API error", e);
+        return null;
+    }
+}
+
+async function convertPrices(targetCurrency) {
+    let priceElements = document.querySelectorAll("[data-price]");
+    for (let el of priceElements) {
+        let baseValue = parseFloat(el.getAttribute("data-price"));
+        let rate = await getCurrencyRate("USD", targetCurrency);
+        if (rate) {
+            el.innerText = (baseValue * rate).toFixed(2) + " " + targetCurrency;
+        }
+    }
+}
+
+function detectCurrency() {
+    let userLang = navigator.language || navigator.userLanguage;
+    if (userLang.includes("en-IN")) return "INR";
+    if (userLang.includes("ar-SA")) return "SAR";
+    return "USD";
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    let userCurrency = detectCurrency();
+    document.getElementById("currencySelect").value = userCurrency;
+    convertPrices(userCurrency);
+
+    document.getElementById("currencySelect").addEventListener("change", function() {
+        convertPrices(this.value);
+    });
+});
+</script>
+
+<!-- Dropdown UI -->
+<div style="position:fixed;top:10px;right:10px;z-index:999;background:#fff;padding:5px;border-radius:5px;box-shadow:0 0 5px #ccc;">
+    <label for="currencySelect">Currency: </label>
+    <select id="currencySelect">
+        <option value="USD">USD</option>
+        <option value="INR">INR</option>
+        <option value="SAR">SAR</option>
+        <option value="EUR">EUR</option>
+    </select>
+</div>
+
+
+    <!-- Currency switcher (auto-added) -->
+    <div id="amima_currency_switcher" style="position:fixed;right:12px;top:12px;z-index:9999;font-family:Arial,sans-serif;">
+      <select id="amima_currency_select" aria-label="Currency switcher">
+        <option value="USD" selected>USD</option>
+        <option value="INR">INR</option>
+        <option value="AED">AED</option>
+        <option value="SAR">SAR</option>
+      </select>
+    </div>
+    <script>
+    // Simple currency switcher:
+    // - Looks for elements with class "price" or data-price attribute and converts numeric value.
+    // - By default assumes amounts are in USD. Replace conversion rates as needed.
+    (function(){ 
+      const rates = { "USD":1, "INR":83.0, "AED":3.67, "SAR":3.75 }; // placeholders
+      function parseAmount(text){
+        // find first number-like token
+        const m = text.replace(/[,\s]+/g,'').match(/-?\d+(?:\.\d+)?/);
+        return m ? parseFloat(m[0]) : null;
+      }
+      function formatAmount(v, cur){
+        try { return new Intl.NumberFormat('en-US',{style:'currency',currency:cur}).format(v); } catch(e) { return v.toFixed(2) + ' ' + cur; }
+      }
+      function convertTo(target){
+        const tRate = rates[target] || 1;
+        document.querySelectorAll('.price, [data-price]').forEach(function(el){
+          let base = null;
+          if (el.dataset && el.dataset.price){
+            base = parseFloat(el.dataset.price);
+          } else {
+            base = parseAmount(el.innerText) || 0;
+          }
+          const converted = base * tRate;
+          el.innerText = formatAmount(converted, target);
+        });
+      }
+      document.getElementById('amima_currency_select').addEventListener('change', function(e){
+        convertTo(e.target.value);
+      });
+    })();
+    </script>
+
+<!-- amima_currency_auto -->
+<script>
+(function(){
+  const rates = { "USD":1, "INR":83.0, "AED":3.67, "SAR":3.75 }; // placeholder rates - update as needed
+  const localeToCurrency = {
+    "US":"USD","IN":"INR","AE":"AED","SA":"SAR","GB":"GBP","BD":"BDT","PK":"PKR","IN":"INR"
+  };
+  function detectCurrency(){
+    try{
+      const lang = navigator.language || (navigator.languages && navigator.languages[0]) || 'en-US';
+      const parts = lang.split('-');
+      const region = (parts.length>1 ? parts[1] : parts[0]).toUpperCase();
+      if(localeToCurrency[region]) return localeToCurrency[region];
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+      if(tz.indexOf('Kolkata')!==-1) return 'INR';
+      if(tz.indexOf('Dubai')!==-1 || tz.indexOf('Abu Dhabi')!==-1) return 'AED';
+      if(tz.indexOf('Riyadh')!==-1) return 'SAR';
+      return 'USD';
+    } catch(e){
+      return 'USD';
+    }
+  }
+  function parseAmount(text){
+    const m = text.replace(/[,\s]+/g,'').match(/-?\d+(?:\.\d+)?/);
+    return m ? parseFloat(m[0]) : null;
+  }
+  function formatAmount(v, cur){
+    try{ return new Intl.NumberFormat(undefined,{style:'currency',currency:cur}).format(v); } catch(e) { return v.toFixed(2) + ' ' + cur; }
+  }
+  function convertTo(target){
+    const tRate = rates[target] || 1;
+    document.querySelectorAll('.price, [data-price]').forEach(function(el){
+      var base = null;
+      if (el.dataset && el.dataset.price){
+        base = parseFloat(el.dataset.price);
+      } else {
+        base = parseAmount(el.innerText) || 0;
+      }
+      var converted = base * tRate;
+      el.innerText = formatAmount(converted, target);
+    });
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    const cur = detectCurrency();
+    convertTo(cur);
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://amimatravels.com/sitemap.xml

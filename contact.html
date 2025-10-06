@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us</title>
+<script data-cfasync="false" data-noptimize="1" data-wpfc-render="false">
+  (function () {
+      var script = document.createElement("script");
+      script.async = 1;
+      script.src = 'https://tpembars.com/MzkxNTEz.js?t=391513';
+      document.head.appendChild(script);
+  })();
+</script>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        header {
+            background: #4CAF50;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #ddd 3px solid;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .contact-form, .address-details {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 48%;
+        }
+        .contact-form h2, .address-details h2 {
+            margin-top: 0;
+        }
+        .contact-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .contact-form button {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .contact-form button:hover {
+            background: #4CAF50;
+        }
+        .address-details p {
+            margin: 10px 0;
+        }
+    </style>
+<meta content="Travel deals with Amima Travels." name="description"/><link href="https://www.amimatravels.com/contact.html" rel="canonical"/><link href="/favicon.ico" rel="icon" type="image/x-icon"/><meta content="Amima Travels - Contact" property="og:title"/><meta content="Book your next trip with Amima Travels." property="og:description"/><meta content="https://www.amimatravels.com/images/hero.jpg" property="og:image"/>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GZBMCH41V3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GZBMCH41V3');
+</script>
+
+</head>
+<body>
+<header>
+<div class="container">
+<h1>Contact Us</h1>
+</div>
+</header>
+<div class="container">
+<div class="content">
+<div class="contact-form">
+<h2>Get in Touch</h2>
+<form action="/submit-form" method="post">
+<label for="name">Name</label>
+<input id="name" name="name" required="" type="text"/>
+<label for="email">Email</label>
+<input id="email" name="email" required="" type="email"/>
+<label for="subject">Subject</label>
+<input id="subject" name="subject" required="" type="text"/>
+<label for="message">Message</label>
+<textarea id="message" name="message" required="" rows="6"></textarea>
+<button type="submit">Send Message</button>
+</form>
+</div>
+<div class="address-details">
+<h2>Our Address</h2>
+<p><strong>Amima Travels</strong></p>
+<p>Lalbagh College Road</p>
+<p>Lalbagh, West Bengal, 742149</p>
+<p><strong>Phone:</strong> (91) 7384366415</p>
+<p><strong>Email:</strong> contact@amimatravels.com</p>
+<p><strong>Office Hours:</strong> Mon-Fri, 9:00 AM - 5:00 PM</p>
+<div class="social-media">
+<h2>Follow Us</h2>
+<a aria-label="Facebook" href="https://www.facebook.com/amimatravels/" target="_blank">
+<img alt="Facebook" src="C:/inetpub/wwwroot/AMIMA TRAVELS/OIP.jpg" style="width: 42px; height: 42px;"/>
+</a>
+<a aria-label="Twitter" href="https://x.com/AmimaTravels" target="_blank">
+<img alt="Twitter" src="C:/inetpub/wwwroot/AMIMA TRAVELS/twitter.jpg" style="width: 40px; height: 40px;"/>
+</a>
+<a aria-label="Instagram" href="https://www.instagram.com/amimatravels/" target="_blank">
+<img alt="Instagram" src="C:/inetpub/wwwroot/AMIMA TRAVELS/instagram.jpg" style="width: 40px;  height: 40px;"/>
+</a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/company/amima-travels/?viewAsMember=true" target="_blank">
+<img alt="LinkedIn" src="C:/inetpub/wwwroot/AMIMA TRAVELS/linkedin.png" style="width: 40px;  height: 40px; "/>
+</a>
+<a aria-label="YouTube" href="https://www.youtube.com/@amimatravels" target="_blank">
+<img alt="YouTube" src="C:/inetpub/wwwroot/AMIMA TRAVELS/youtube.jpg" style="width: 42px; height: 42px;"/>
+</a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Currency Conversion Script with Dropdown -->
+<script>
+async function getCurrencyRate(base, target) {
+    try {
+        let res = await fetch(`https://api.exchangerate.host/latest?base=${base}`);
+        let data = await res.json();
+        return data.rates[target];
+    } catch (e) {
+        console.error("Currency API error", e);
+        return null;
+    }
+}
+
+async function convertPrices(targetCurrency) {
+    let priceElements = document.querySelectorAll("[data-price]");
+    for (let el of priceElements) {
+        let baseValue = parseFloat(el.getAttribute("data-price"));
+        let rate = await getCurrencyRate("USD", targetCurrency);
+        if (rate) {
+            el.innerText = (baseValue * rate).toFixed(2) + " " + targetCurrency;
+        }
+    }
+}
+
+function detectCurrency() {
+    let userLang = navigator.language || navigator.userLanguage;
+    if (userLang.includes("en-IN")) return "INR";
+    if (userLang.includes("ar-SA")) return "SAR";
+    return "USD";
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    let userCurrency = detectCurrency();
+    document.getElementById("currencySelect").value = userCurrency;
+    convertPrices(userCurrency);
+
+    document.getElementById("currencySelect").addEventListener("change", function() {
+        convertPrices(this.value);
+    });
+});
+</script>
+
+<!-- Dropdown UI -->
+<div style="position:fixed;top:10px;right:10px;z-index:999;background:#fff;padding:5px;border-radius:5px;box-shadow:0 0 5px #ccc;">
+    <label for="currencySelect">Currency: </label>
+    <select id="currencySelect">
+        <option value="USD">USD</option>
+        <option value="INR">INR</option>
+        <option value="SAR">SAR</option>
+        <option value="EUR">EUR</option>
+    </select>
+</div>
+
+
+    <!-- Currency switcher (auto-added) -->
+    <div id="amima_currency_switcher" style="position:fixed;right:12px;top:12px;z-index:9999;font-family:Arial,sans-serif;">
+      <select id="amima_currency_select" aria-label="Currency switcher">
+        <option value="USD" selected>USD</option>
+        <option value="INR">INR</option>
+        <option value="AED">AED</option>
+        <option value="SAR">SAR</option>
+      </select>
+    </div>
+    <script>
+    // Simple currency switcher:
+    // - Looks for elements with class "price" or data-price attribute and converts numeric value.
+    // - By default assumes amounts are in USD. Replace conversion rates as needed.
+    (function(){ 
+      const rates = { "USD":1, "INR":83.0, "AED":3.67, "SAR":3.75 }; // placeholders
+      function parseAmount(text){
+        // find first number-like token
+        const m = text.replace(/[,\s]+/g,'').match(/-?\d+(?:\.\d+)?/);
+        return m ? parseFloat(m[0]) : null;
+      }
+      function formatAmount(v, cur){
+        try { return new Intl.NumberFormat('en-US',{style:'currency',currency:cur}).format(v); } catch(e) { return v.toFixed(2) + ' ' + cur; }
+      }
+      function convertTo(target){
+        const tRate = rates[target] || 1;
+        document.querySelectorAll('.price, [data-price]').forEach(function(el){
+          let base = null;
+          if (el.dataset && el.dataset.price){
+            base = parseFloat(el.dataset.price);
+          } else {
+            base = parseAmount(el.innerText) || 0;
+          }
+          const converted = base * tRate;
+          el.innerText = formatAmount(converted, target);
+        });
+      }
+      document.getElementById('amima_currency_select').addEventListener('change', function(e){
+        convertTo(e.target.value);
+      });
+    })();
+    </script>
+
+<!-- amima_currency_auto -->
+<script>
+(function(){
+  const rates = { "USD":1, "INR":83.0, "AED":3.67, "SAR":3.75 }; // placeholder rates - update as needed
+  const localeToCurrency = {
+    "US":"USD","IN":"INR","AE":"AED","SA":"SAR","GB":"GBP","BD":"BDT","PK":"PKR","IN":"INR"
+  };
+  function detectCurrency(){
+    try{
+      const lang = navigator.language || (navigator.languages && navigator.languages[0]) || 'en-US';
+      const parts = lang.split('-');
+      const region = (parts.length>1 ? parts[1] : parts[0]).toUpperCase();
+      if(localeToCurrency[region]) return localeToCurrency[region];
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+      if(tz.indexOf('Kolkata')!==-1) return 'INR';
+      if(tz.indexOf('Dubai')!==-1 || tz.indexOf('Abu Dhabi')!==-1) return 'AED';
+      if(tz.indexOf('Riyadh')!==-1) return 'SAR';
+      return 'USD';
+    } catch(e){
+      return 'USD';
+    }
+  }
+  function parseAmount(text){
+    const m = text.replace(/[,\s]+/g,'').match(/-?\d+(?:\.\d+)?/);
+    return m ? parseFloat(m[0]) : null;
+  }
+  function formatAmount(v, cur){
+    try{ return new Intl.NumberFormat(undefined,{style:'currency',currency:cur}).format(v); } catch(e) { return v.toFixed(2) + ' ' + cur; }
+  }
+  function convertTo(target){
+    const tRate = rates[target] || 1;
+    document.querySelectorAll('.price, [data-price]').forEach(function(el){
+      var base = null;
+      if (el.dataset && el.dataset.price){
+        base = parseFloat(el.dataset.price);
+      } else {
+        base = parseAmount(el.innerText) || 0;
+      }
+      var converted = base * tRate;
+      el.innerText = formatAmount(converted, target);
+    });
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    const cur = detectCurrency();
+    convertTo(cur);
+  });
+})();
+</script>
+</body>
+</html>
