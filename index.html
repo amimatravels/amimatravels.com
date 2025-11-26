@@ -5,16 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Amima Travels - Enjoy Stress Free Holidays</title>
 
-<!-- NEW WHITE-LABEL WIDGET LOADER -->
+<!-- TRAVELPAYOUTS / WHITE-LABEL FLIGHT WIDGET (kept) -->
 <script data-noptimize="1" data-cfasync="false" data-wpfc-render="false">
 (function () {
-      var script = document.createElement("script");
-      script.async = 1;
-      script.type = "module";
-      script.src = "https://tpwdg.com/wl_web/main.js?wl_id=1107";
-      document.head.appendChild(script);
+    var script = document.createElement("script");
+    script.async = 1;
+    script.type = "module";
+    script.src = "https://tpwdg.com/wl_web/main.js?wl_id=1107";
+    document.head.appendChild(script);
 })();
 </script>
+
+<!-- EXPEDIA WIDGET SCRIPT (will render the hotel widget) -->
+<script class="eg-widgets-script" src="https://creator.expediagroup.com/products/widgets/assets/eg-widgets.js" defer></script>
 
 <!-- SEO -->
 <meta name="description" content="Book flights and hotels at the lowest price with Amima Travels. Compare fares, explore destinations, and enjoy stress-free travel."/>
@@ -38,143 +41,135 @@ gtag('js', new Date());
 gtag('config', 'G-GZBMCH41V3');
 </script>
 
-<!-- PREMIUM STYLES -->
+<!-- STYLES -->
 <style>
-* {
-    margin: 0; padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", Arial, sans-serif;
-}
-body {
-    background: #f5f8ff;
-    text-align: center;
-}
+/* Base */
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",Arial,sans-serif}
+body{background:#f5f8ff;color:#222;line-height:1.45}
+a{color:inherit}
 
-/* HEADER */
-header {
-    background: linear-gradient(135deg, #007bff, #0054d1);
-    color: white;
-    padding: 40px 20px;
-    font-size: 34px;
-    font-weight: 700;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
+/* Header & Nav */
+header{background:linear-gradient(135deg,#007bff,#0054d1);color:#fff;padding:40px 20px;font-size:34px;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,0.15);text-align:center}
+nav{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;background:#fff;padding:12px;box-shadow:0 4px 10px rgba(0,0,0,0.06)}
+nav a{font-size:16px;color:#0054d1;font-weight:600;text-decoration:none;padding:6px 8px;border-radius:6px}
+nav a:hover{color:#FA742D}
 
-/* NAVIGATION */
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    background: #fff;
-    padding: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-nav a {
-    font-size: 18px;
-    color: #0054d1;
-    font-weight: 600;
-    text-decoration: none;
-    transition: 0.3s;
-}
-nav a:hover {
-    color: #FA742D;
-}
+/* Hero */
+.hero{height:420px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:40px;font-weight:800;background-size:cover;background-position:center;border-bottom-left-radius:40px;border-bottom-right-radius:40px;box-shadow:0 10px 20px rgba(0,0,0,0.12);margin:20px}
 
-/* HERO */
-.hero {
-    height: 420px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    background-size: cover;
-    background-position: center;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
+/* General widget container */
+.container { max-width:1100px; margin: 0 auto; padding: 20px; }
 
-/* WIDGET */
-.widget-box {
-    max-width: 900px;
-    margin: 30px auto;
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 18px;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.1);
-}
+/* Generic widget-box (used for flight & hotel card) */
+.widget-box{max-width:960px;margin:30px auto;background:#fff;padding:26px;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,0.08);text-align:left}
+.widget-box h2{color:#0054d1;font-size:24px;margin-bottom:8px;font-weight:700}
+.widget-box p{color:#555;margin-bottom:14px}
 
-/* FOOTER */
-footer {
-    background: #1a1a1a;
-    color: white;
-    padding: 40px 20px;
+/* Flight card specifics (keeps Travelpayouts UI fluid) */
+.flight-card .tpwl-wrapper { width:100%; }
+
+/* Expedia boxed card (Style A) */
+.expedia-section { width:100%; display:flex; justify-content:center; margin:40px 0 10px; }
+.expedia-card { max-width:720px; width:100%; background:#ffffff; padding:28px; border-radius:16px; box-shadow:0 8px 35px rgba(0,0,0,0.12); text-align:center; }
+.expedia-card .widget-title { font-size:26px; font-weight:700; color:#0054d1; margin-bottom:6px; }
+.expedia-card .widget-desc { font-size:15px; color:#555; margin-bottom:18px; }
+
+/* Keep images/icons inside footer tidy */
+footer{background:#1a1a1a;color:#fff;padding:32px 20px;text-align:center}
+footer img{margin:6px;transition:transform .25s}
+footer img:hover{transform:scale(1.08)}
+footer p{margin-top:12px;color:#dcdcdc}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .hero{height:320px;font-size:34px}
+  .widget-box{margin:20px 16px;padding:20px;border-radius:12px}
+  .expedia-card{padding:20px;border-radius:12px}
+  .expedia-card .widget-title{font-size:22px}
 }
-footer img {
-    margin: 8px;
-    transition: 0.3s;
-}
-footer img:hover {
-    transform: scale(1.1);
-}
-footer p {
-    margin-top: 10px;
+@media (max-width: 520px) {
+  nav{gap:10px;padding:10px}
+  header{padding:28px 12px;font-size:26px}
+  .hero{height:240px;font-size:20px;border-radius:12px;margin:12px}
+  .widget-box{padding:16px;margin:14px}
+  .expedia-card .widget-title{font-size:20px}
 }
 </style>
 </head>
-
 <body>
 
 <header>Amima Travels — Enjoy Stress Free Holidays</header>
 
 <nav>
-    <a href="index.html" style="color:#FA742D;">Home</a>
-    <a href="booking.html">Flight Booking</a>
-    <a href="carrental.html">Car Booking</a>
-    <a href="hotelbooking.html">Hotel Booking</a>
-    <a href="aboutus.html">About Us</a>
-    <a href="contactus.html">Contact Us</a>
+  <a href="index.html" style="color:#FA742D;">Home</a>
+  <a href="booking.html">Flight Booking</a>
+  <a href="carrental.html">Car Booking</a>
+  <a href="hotelbooking.html">Hotel Booking</a>
+  <a href="aboutus.html">About Us</a>
+  <a href="contactus.html">Contact Us</a>
 </nav>
 
 <div class="hero" id="hero">Find Your Perfect Flight</div>
 
-<!-- SINGLE NEW WHITE-LABEL SEARCH WIDGET -->
-<div class="widget-box">
-    <h2 style="color:#0054d1; font-size:26px; margin-bottom:15px;">Search Flights</h2>
-    <div id="tpwl-search"></div>
-</div>
+<div class="container">
 
-<!-- RESULT SECTION -->
-<div class="widget-box" style="margin-top:20px;">
-    <div id="tpwl-tickets"></div>
-</div>
+  <!-- FLIGHT SEARCH - SINGLE (Travelpayouts white-label) -->
+  <div class="widget-box flight-card" aria-label="Flight search">
+      <h2>Search Flights</h2>
+      <p style="color:#555;margin-bottom:12px;">Quickly compare fares from multiple airlines and agencies.</p>
+
+      <!-- Travelpayouts placeholder (kept as active flight search) -->
+      <div id="tpwl-search"></div>
+
+      <!-- Flight search results container (kept) -->
+      <div id="tpwl-tickets" style="margin-top:18px;"></div>
+  </div>
+
+  <!-- EXPEDIA HOTEL SEARCH (Style A - boxed card) placed BELOW flight results -->
+  <section id="hotel-widget" class="expedia-section" aria-label="Hotel search">
+    <div class="expedia-card widget-box" style="padding:22px 26px;">
+      <div class="widget-title">Search Hotels Worldwide</div>
+      <div class="widget-desc">Find the best hotel deals, resorts, apartments and more from Expedia partner network.</div>
+
+      <!-- Expedia widget placeholder -->
+      <div class="eg-widget"
+           data-widget="search"
+           data-program="us-expedia"
+           data-lobs="stays"
+           data-network="pz"
+           data-camref="1101l5yDqY"
+           data-pubref="">
+      </div>
+
+    </div>
+  </section>
+
+</div> <!-- /.container -->
 
 <footer>
-<h2>Follow Us</h2>
-<a href="https://www.facebook.com/amimatravels/" target="_blank"><img src="icons8-facebook-48.png" width="42"/></a>
-<a href="https://x.com/AmimaTravels" target="_blank"><img src="icons8-x-48.png" width="40"/></a>
-<a href="https://www.instagram.com/amimatravels/" target="_blank"><img src="icons8-instagram-48.png" width="40"/></a>
-<a href="https://www.linkedin.com/company/amima-travels" target="_blank"><img src="icons8-linkedin-48.png" width="40"/></a>
-<a href="https://www.youtube.com/@amimatravels" target="_blank"><img src="icons8-youtube-48.png" width="42"/></a>
-<p>contact@amimatravels.com • +91 7384366415 • Murshidabad, West Bengal, India</p>
+  <h2 style="color:#fff;margin-bottom:8px">Follow Us</h2>
+  <a href="https://www.facebook.com/amimatravels/" target="_blank" rel="noopener"><img src="icons8-facebook-48.png" width="36" alt="Facebook"/></a>
+  <a href="https://x.com/AmimaTravels" target="_blank" rel="noopener"><img src="icons8-x-48.png" width="36" alt="X"/></a>
+  <a href="https://www.instagram.com/amimatravels/" target="_blank" rel="noopener"><img src="icons8-instagram-48.png" width="36" alt="Instagram"/></a>
+  <a href="https://www.linkedin.com/company/amima-travels" target="_blank" rel="noopener"><img src="icons8-linkedin-48.png" width="36" alt="LinkedIn"/></a>
+  <a href="https://www.youtube.com/@amimatravels" target="_blank" rel="noopener"><img src="icons8-youtube-48.png" width="36" alt="YouTube"/></a>
+  <p>contact@amimatravels.com • +91 7384366415 • Murshidabad, West Bengal, India</p>
 </footer>
 
 <!-- HERO SLIDESHOW -->
 <script>
 const hero = document.getElementById("hero");
 const slides = [
-    "airbus-8607152_1280.jpg",
-    "bora-bora-3023437_1280.jpg",
-    "emirates-867771_1280.jpg",
-    "sea-7250881_1280.jpg",
-    "glacier-7187291_1280.jpg"
+  "airbus-8607152_1280.jpg",
+  "bora-bora-3023437_1280.jpg",
+  "emirates-867771_1280.jpg",
+  "sea-7250881_1280.jpg",
+  "glacier-7187291_1280.jpg"
 ];
 let i = 0;
 function updateHero(){
-    hero.style.backgroundImage = `url('${slides[i]}')`;
-    i = (i + 1) % slides.length;
+  hero.style.backgroundImage = "url('" + slides[i] + "')";
+  i = (i + 1) % slides.length;
 }
 setInterval(updateHero, 5000);
 updateHero();
@@ -182,5 +177,3 @@ updateHero();
 
 </body>
 </html>
-
-
